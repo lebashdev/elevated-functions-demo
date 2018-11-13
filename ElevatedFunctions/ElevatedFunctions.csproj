@@ -6,4 +6,8 @@
     <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ElevatedFunctions.Core\ElevatedFunctions.Core.csproj" />
+  </ItemGroup>
+
 </Project>
