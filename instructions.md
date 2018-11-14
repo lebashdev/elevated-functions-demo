@@ -34,7 +34,7 @@ Toxic<int> ToxicIncrement(int x) => Toxic.FromValue(x + 1);
 var wrappedIncrement = Toxic.FromValue<Func<int, int>>(Increment);
 ```
 
-```Add()``` is a normal function which takes two integers, adds them together, then returns the result as a normal integer.
+```Add()``` is a normal function which takes two integers and returns their sum as a normal integer.
 
 ```csharp
 int Add(int x, int y) => x + y;
