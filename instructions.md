@@ -28,7 +28,7 @@ int Increment(int x) => x + 1;
 Toxic<int> ToxicIncrement(int x) => Toxic.FromValue(x + 1);
 ```
 
-```wrappedIncrement``` is the same function as Increment, but has itself been trapped in a ```Toxic``` container.
+```wrappedIncrement``` is the same function as ```Increment()```, but has itself been trapped in a ```Toxic``` container.
 
 ```csharp
 var wrappedIncrement = Toxic.FromValue<Func<int, int>>(Increment);
