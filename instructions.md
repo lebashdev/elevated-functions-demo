@@ -60,7 +60,7 @@ int Add(int x, int y) => x + y;
 
 ## Constraints
 
- - Because ```a``` and ```b``` are toxic values, you should not try to pull them outside of their containers.  You should apply the transformations inside the toxic contexts.  Conversely, the results of those computation are going to be inherently toxic, therefore they should be trapped in toxic containers themselves.  In other words, all four functions will ultimately take toxic integers in, and return toxic integers.
+ - Because ```a``` and ```b``` are toxic values, you should not try to pull them outside of their containers.  You should apply the transformations inside the toxic contexts.  Conversely, the results of those computation are going to be inherently toxic, therefore they should be trapped in toxic containers as well.  In other words, all four functions will ultimately take toxic integers in, and return toxic integers.
 - It is OK to "transfer" a value from one toxic container to another, as long as the transfer occurs within a toxic context.
 - You may not change the way the four functions are implemented.  You may however write code around the functions, which will affect how the functions are invoked.
 - The resulting code should be type-safe (no reflection, serialization, etc.)
