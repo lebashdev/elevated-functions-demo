@@ -11,7 +11,7 @@ namespace ElevatedFunctions.Core
             this._value = value;
         }
 
-        public Toxic<TOut> PassInto<TOut>(Func<T, TOut> f) => new Toxic<TOut>(f(this._value));
+        public Toxic<TOut> RunInside<TOut>(Func<T, TOut> f) => new Toxic<TOut>(f(this._value));
         public override string ToString() => $"[Toxic {this._value}]";
     }
 
@@ -20,13 +20,13 @@ namespace ElevatedFunctions.Core
         public static Toxic<TValue> FromValue<TValue>(TValue value) => new Toxic<TValue>(value);
     }
 
-    public static class TrapExtensions
+    public static class ToxicExtensions
     {
         public static Toxic<T> Unwrap<T>(this Toxic<Toxic<T>> toxic)
         {
             Toxic<T> innerToxic = null;
 
-            toxic.PassInto(innerValue =>
+            toxic.RunInside(innerValue =>
             {
                 innerToxic = innerValue;
                 return innerValue;
