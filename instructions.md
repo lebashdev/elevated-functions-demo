@@ -76,6 +76,6 @@ The ```Toxic<T>``` type exposes a simple API, which you should use to suport you
 | Name | Description |
 | ---- | ---- |
 | ```FromValue(value: T) => Toxic<T>``` | The static method traps a regular value in a ```Toxic``` container |
-| ```PassInto(f: (value: T) => U) => Toxic<U>``` | Passes the value trapped within the toxic container to the specified lambda and returns the result as a ```Toxic<T>```.  This is the only way to safely access the trapped value as it executes the transformation inside the toxic context rather than outside. |
+| ```RunInside(f: (value: T) => U) => Toxic<U>``` | Passes the value trapped within the toxic container to the specified lambda and returns the result as a ```Toxic<T>```.  This is the only way to safely access the trapped value as it executes the transformation inside the toxic context rather than outside. |
 | ```Unwrap() => Toxic<T>``` | Flattens a nested ```Toxic<Toxic<T>>``` value into a ```Toxic<T>``` |
 | ```ToString() => string``` | Display the trapped value as a string.  Use this to print the results of the various invocations in the console. |
