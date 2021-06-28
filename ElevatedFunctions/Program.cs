@@ -76,6 +76,14 @@ namespace ElevatedFunctions
             // curry :: ((a, b) -> c) -> (a -> (b -> c))
             Func<A, Func<B, C>> Curry<A, B, C>(Func<A, B, C> f) => x => y => f(x, y);
 
+            // The functions above transform the functions they are given into new functions with different signatures.
+            // As an example, "Map" takes a function of type "Func<A, B>" and converts it to
+            // to a new function of type "Func<Toxic<A>, Toxic<B>>".  "Map" is typically treated as a function
+            // that applies a transformation to a collection of elements (a.k.a IEnumerable.Select).  But here
+            // we see that it can also be seen as a function that translates a function from A to B to a function from T<A> to T<B>.
+            // The same goes for "Bind" and "Apply".  Those functions can be use to translate a function's signature
+            // into an elevated context.
+
             // Single parameter.
             var increment1 = Map<int, int>(Increment);
             var increment2 = Bind<int, int>(ToxicIncrement);
